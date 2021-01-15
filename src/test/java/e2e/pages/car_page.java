@@ -78,7 +78,6 @@ public class car_page extends webdriver {
         ArrayList<String> ilines = new ArrayList<String>();
 
         BufferedReader br = new BufferedReader(new FileReader(filePath + "outputData/" + output_file));
-//        br.readLine();
 
         String line = br.readLine();
         while (line != null) {
@@ -86,16 +85,8 @@ public class car_page extends webdriver {
             ilines.add(line);
         }
 
-        String fileName = "failedRegistrationNos.txt";
 
-        File file = new File(filePath + "failed/" + fileName);
 
-        FileWriter fw = null;
-        if (!file.exists()) {
-            file.createNewFile();
-        }
-
-        FileWriter fileWriter = new FileWriter(filePath + "/failed/" + fileName);
         for (int i = 0; i < reg_numbers.size(); i++) {
             enter_registration_box.sendKeys(reg_numbers.get(i));
             FreeCareChkButton.click();
